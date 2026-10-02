@@ -4,6 +4,7 @@
   "description": "Chameli Designer Boutique Kizhakkambalam - Official Web Application & Asset Studio",
   "main": "server.js",
   "scripts": {
+    "build": "echo 'Static build ready'",
     "start": "node server.js",
     "dev": "node server.js"
   },
