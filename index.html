@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chameli Designer Boutique | Kizhakkambalam</title>
+  <meta name="description" content="Chameli Designer Boutique Kizhakkambalam - Premier destination for royal bridal lehengas, designer sarees, anarkalis, and custom couture tailoring. View new collections and request custom outfit designs.">
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- Royal Peacock Welcome Screen Loader Overlay -->
+  <div id="peacockLoader" class="peacock-loader-overlay">
+    <div class="peacock-loader-content">
+      <div class="peacock-glow-ring"></div>
+      <div class="peacock-logo-box">
+        <img src="./assets/images/chameli_logo.jpg" alt="Chameli Peacock Emblem Logo" class="peacock-intro-logo logo-img">
+      </div>
+      <div class="peacock-text-group">
+        <span class="peacock-subtitle-top">Bespoke Luxury Boutique</span>
+        <h1 class="peacock-main-title gold-gradient-text">WELCOME TO CHAMELI</h1>
+        <p class="peacock-location-subtitle">Kizhakkambalam • Kerala</p>
+      </div>
+      <div class="peacock-loading-bar">
+        <div class="peacock-loading-progress"></div>
+      </div>
+      <button class="peacock-skip-btn" id="skipIntroBtn">Enter Boutique <i class="fas fa-arrow-right" style="margin-left: 4px;"></i></button>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#home" class="logo-wrapper" id="brandLogoBtn">
+        <img src="./assets/images/chameli_logo.jpg" alt="Chameli Designer Boutique Logo" class="logo-img" id="navLogoImg" style="border-radius: 8px; object-fit: contain; background: #000; padding: 2px;">
+        <div class="logo-text">
+          <span class="logo-title gold-gradient-text">CHAMELI</span>
+          <span class="logo-subtitle">DESIGNER BOUTIQUE</span>
+<span class="logo-subtitle">BY SHINE ELDO</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#collections" class="nav-link">New Collections</a></li>          
+          <li><a href="#craftsmanship" class="nav-link">Craftsmanship</a></li>
+          <li><a href="admin-upload.html" class="nav-link" style="color: var(--accent-gold);"><i class="fas fa-folder-plus" style="margin-right: 4px;"></i> Assets Upload</a></li>
+          <li><a href="#contact" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-switcher-btn" id="openThemeBtn" title="Theme Settings">
+          <i class="fas fa-palette"></i>
+          <span>Theme Settings</span>
+        </button>
+        <a href="#custom-orders" class="btn-primary">
+          <i class="fas fa-pencil-ruler"></i>
+          <span>Custom Order</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <img src="./assets/images/hero_bg_luxury.jpg" alt="Chameli Luxury Boutique Showcase" class="hero-bg-img">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-text-side">
+        <div class="hero-badge">
+          <i class="fas fa-crown" style="color: var(--accent-gold);"></i>
+          <span>Haute Couture Collection 2026</span>
+        </div>
+        <h1 class="hero-title gold-gradient-text">Where Tradition Meets Regal Elegance</h1>
+        <p class="hero-desc">
+          Step into Chameli Designer Boutique, Kizhakkambalam. Discover exquisite hand-embroidered bridal lehengas, organza silk sarees, royal anarkalis, and bespoke custom tailoring crafted for your most cherished moments.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#collections" class="btn-primary">
+            <i class="fas fa-th-large"></i>
+            <span>Browse Grid Gallery</span>
+          </a>
+          <a href="#custom-orders" class="btn-secondary">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <span>Upload Reference Photo</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-preview-card gold-border-glow">
+        <img src="./assets/images/hero_bridal.jpg" alt="Featured Royal Bridal Outfit" class="hero-preview-img">
+        <div class="hero-preview-info">
+          <div>
+            <span class="preview-tag">Spotlight Design</span>
+            <h3 class="preview-name">Royal Crimson Zardozi Lehenga</h3>
+          </div>
+          <a href="#custom-orders" class="btn-primary" style="padding: 8px 16px; font-size: 0.75rem;">
+            <span>Customize</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collections Showcase (GRID VIEW FIRST as default) -->
+  <section id="collections" class="section-padding">
+    <div class="section-header">
+      <span class="section-subtitle">New Arrival Showcase</span>
+      <h2 class="section-title gold-gradient-text">Explore Our New Collections</h2>
+      <p class="section-desc">Browse our curated masterpieces in our interactive grid gallery or switch to full-width featured slide carousel view.</p>
+    </div>
+
+    <!-- View Format Switcher & Filter Bar -->
+    <div class="view-format-bar">
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All Designs</button>
+        <button class="filter-btn" data-filter="bridal">Bridal Lehengas</button>
+        <button class="filter-btn" data-filter="sarees">Designer Sarees</button>
+        <button class="filter-btn" data-filter="anarkali">Royal Anarkalis</button>
+        <button class="filter-btn" data-filter="indowestern">Indo-Western</button>
+      </div>
+
+      <div class="view-toggle-group">
+        <button class="view-toggle-btn active" id="viewToggleGrid" title="Default Grid Gallery View">
+          <i class="fas fa-th-large"></i>
+          <span>Grid View (Default)</span>
+        </button>
+        <button class="view-toggle-btn" id="viewToggleSlide" title="Switch to Carousel Slide View">
+          <i class="fas fa-sliders-h"></i>
+          <span>Slide View</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- GRID FORMAT VIEW (DEFAULT ACTIVE FIRST) -->
+    <div class="collections-grid-view active-view" id="collectionsGridView">
+      <div class="product-grid">
+
+        <!-- Card 1 -->
+        <div class="product-card" data-category="bridal">
+          <div class="card-img-wrapper">
+            <img src="./assets/images/hero_bridal.jpg" alt="Royal Crimson Lehenga" class="card-img">
+            <span class="card-badge">Bridal 2026</span>
+            <div class="card-actions">
+              <button class="action-btn view-product-btn" title="Quick View"><i class="fas fa-eye"></i></button>
+              <button class="action-btn" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+              <a href="#custom-orders" class="action-btn" title="Custom Stitch"><i class="fas fa-magic"></i></a>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Bridal Lehenga</span>
+            <h4 class="card-title">Velvet Crimson Zardozi Lehenga</h4>
+            <div class="card-footer">
+              <span class="card-price">Custom Couture</span>
+              <a href="#custom-orders" class="btn-primary" style="padding: 6px 14px; font-size: 0.75rem;">Upload Reference</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card" data-category="sarees">
+          <div class="card-img-wrapper">
+            <img src="./assets/images/emerald_saree.jpg" alt="Emerald Organza Saree" class="card-img">
+            <span class="card-badge">Bestseller</span>
+            <div class="card-actions">
+              <button class="action-btn view-product-btn" title="Quick View"><i class="fas fa-eye"></i></button>
+              <button class="action-btn" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+              <a href="#custom-orders" class="action-btn" title="Custom Stitch"><i class="fas fa-magic"></i></a>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Designer Saree</span>
+            <h4 class="card-title">Emerald Silk Organza Saree</h4>
+            <div class="card-footer">
+              <span class="card-price">Ready / Custom</span>
+              <a href="#custom-orders" class="btn-primary" style="padding: 6px 14px; font-size: 0.75rem;">Upload Reference</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card" data-category="bridal">
+          <div class="card-img-wrapper">
+            <img src="./assets/images/pastel_lehenga.jpg" alt="Pastel Blush Lehenga" class="card-img">
+            <span class="card-badge">Pastel Edition</span>
+            <div class="card-actions">
+              <button class="action-btn view-product-btn" title="Quick View"><i class="fas fa-eye"></i></button>
+              <button class="action-btn" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+              <a href="#custom-orders" class="action-btn" title="Custom Stitch"><i class="fas fa-magic"></i></a>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Reception Lehenga</span>
+            <h4 class="card-title">Rose Pearl Mirror Lehenga</h4>
+            <div class="card-footer">
+              <span class="card-price">Custom Couture</span>
+              <a href="#custom-orders" class="btn-primary" style="padding: 6px 14px; font-size: 0.75rem;">Upload Reference</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="product-card" data-category="anarkali">
+          <div class="card-img-wrapper">
+            <img src="./assets/images/royal_anarkali.jpg" alt="Navy Velvet Anarkali" class="card-img">
+            <span class="card-badge">Festive Special</span>
+            <div class="card-actions">
+              <button class="action-btn view-product-btn" title="Quick View"><i class="fas fa-eye"></i></button>
+              <button class="action-btn" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+              <a href="#custom-orders" class="action-btn" title="Custom Stitch"><i class="fas fa-magic"></i></a>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Anarkali Suit</span>
+            <h4 class="card-title">Navy Gold Gota Anarkali</h4>
+            <div class="card-footer">
+              <span class="card-price">Ready / Custom</span>
+              <a href="#custom-orders" class="btn-primary" style="padding: 6px 14px; font-size: 0.75rem;">Upload Reference</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="product-card" data-category="indowestern">
+          <div class="card-img-wrapper">
+            <img src="./assets/images/indowestern_gown.jpg" alt="Champagne Gold Cape Gown" class="card-img">
+            <span class="card-badge">Runway Look</span>
+            <div class="card-actions">
+              <button class="action-btn view-product-btn" title="Quick View"><i class="fas fa-eye"></i></button>
+              <button class="action-btn" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+              <a href="#custom-orders" class="action-btn" title="Custom Stitch"><i class="fas fa-magic"></i></a>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Indo-Western Gown</span>
+            <h4 class="card-title">Champagne Sequin Cape Gown</h4>
+            <div class="card-footer">
+              <span class="card-price">Custom Couture</span>
+              <a href="#custom-orders" class="btn-primary" style="padding: 6px 14px; font-size: 0.75rem;">Upload Reference</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SLIDE FORMAT VIEW (TOGGLEABLE) -->
+    <div class="collections-slide-view" id="collectionsSlideView">
+      <div class="slider-container">
+        <button class="slide-nav-btn slide-prev" id="slidePrevBtn" aria-label="Previous Slide">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slide-nav-btn slide-next" id="slideNextBtn" aria-label="Next Slide">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="slider-wrapper" id="sliderWrapper">
+          
+          <!-- Slide Item 1 -->
+          <div class="slide-item">
+            <div class="slide-img-wrapper">
+              <img src="./assets/images/hero_bridal.jpg" alt="Royal Crimson Velvet Lehenga" class="slide-img">
+            </div>
+            <div class="slide-details">
+              <span class="slide-category">Bridal Collection 2026</span>
+              <h3 class="slide-title gold-gradient-text">Velvet Crimson Zardozi Lehenga</h3>
+              <p class="slide-description">
+                Handcrafted over 240 artisan hours featuring rich velvet fabric embedded with intricate antique gold zardozi work, peacocks, and floral motifs. Includes dual dupatta drape.
+              </p>
+              <div class="slide-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Fabric</span>
+                  <span class="spec-val">Royal Micro Velvet</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Workmanship</span>
+                  <span class="spec-val">Hand Zardozi & Dabka</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Customization</span>
+                  <span class="spec-val">Color & Stitching Available</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Est. Delivery</span>
+                  <span class="spec-val">15 - 20 Days</span>
+                </div>
+              </div>
+              <div style="display: flex; gap: 1rem;">
+                <a href="#custom-orders" class="btn-primary">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span>Order Custom Fit</span>
+                </a>
+                <button class="btn-secondary view-product-btn">
+                  <i class="fas fa-eye"></i>
+                  <span>Quick View</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide Item 2 -->
+          <div class="slide-item">
+            <div class="slide-img-wrapper">
+              <img src="./assets/images/emerald_saree.jpg" alt="Emerald Green Silk Organza Saree" class="slide-img">
+            </div>
+            <div class="slide-details">
+              <span class="slide-category">Designer Saree Collection</span>
+              <h3 class="slide-title gold-gradient-text">Emerald Organza Zari Saree</h3>
+              <p class="slide-description">
+                Ethereal emerald green silk organza saree with hand-carved scalloped borders and delicate gold thread embroidery. Comes with matching embroidered blouse piece.
+              </p>
+              <div class="slide-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Fabric</span>
+                  <span class="spec-val">Silk Organza</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Border Work</span>
+                  <span class="spec-val">Scalloped Gold Zari</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Blouse Style</span>
+                  <span class="spec-val">Unstitched / Custom Stitch</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Est. Delivery</span>
+                  <span class="spec-val">7 - 10 Days</span>
+                </div>
+              </div>
+              <div style="display: flex; gap: 1rem;">
+                <a href="#custom-orders" class="btn-primary">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span>Order Custom Fit</span>
+                </a>
+                <button class="btn-secondary view-product-btn">
+                  <i class="fas fa-eye"></i>
+                  <span>Quick View</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide Item 3 -->
+          <div class="slide-item">
+            <div class="slide-img-wrapper">
+              <img src="./assets/images/pastel_lehenga.jpg" alt="Pastel Blush Pearl Mirror Lehenga" class="slide-img">
+            </div>
+            <div class="slide-details">
+              <span class="slide-category">Pastel Royalty Collection</span>
+              <h3 class="slide-title gold-gradient-text">Rose Pearl Mirror Lehenga</h3>
+              <p class="slide-description">
+                Modern luxury in blush pink and rose gold tones. Embellished with real mirror work, subtle pearls, and delicate crystal embroidery perfect for grand receptions.
+              </p>
+              <div class="slide-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Fabric</span>
+                  <span class="spec-val">Raw Silk & Net Dupatta</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Workmanship</span>
+                  <span class="spec-val">Mirror & Pearl Handwork</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Can-Can Flare</span>
+                  <span class="spec-val">Heavy Double Can-Can</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Est. Delivery</span>
+                  <span class="spec-val">12 - 18 Days</span>
+                </div>
+              </div>
+              <div style="display: flex; gap: 1rem;">
+                <a href="#custom-orders" class="btn-primary">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span>Order Custom Fit</span>
+                </a>
+                <button class="btn-secondary view-product-btn">
+                  <i class="fas fa-eye"></i>
+                  <span>Quick View</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide Item 4 -->
+          <div class="slide-item">
+            <div class="slide-img-wrapper">
+              <img src="./assets/images/royal_anarkali.jpg" alt="Navy Velvet Anarkali Suit" class="slide-img">
+            </div>
+            <div class="slide-details">
+              <span class="slide-category">Royal Heritage Anarkalis</span>
+              <h3 class="slide-title gold-gradient-text">Navy Gold Gota Anarkali</h3>
+              <p class="slide-description">
+                Regal floor-length navy blue velvet Anarkali crafted with traditional dabka, gota patti detailing, and heavy gher. Elegant & comfortable for festive celebrations.
+              </p>
+              <div class="slide-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Fabric</span>
+                  <span class="spec-val">Italian Velvet</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Workmanship</span>
+                  <span class="spec-val">Gota Patti & Antique Dabka</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Include</span>
+                  <span class="spec-val">Suit, Churidar & Dupatta</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Est. Delivery</span>
+                  <span class="spec-val">8 - 12 Days</span>
+                </div>
+              </div>
+              <div style="display: flex; gap: 1rem;">
+                <a href="#custom-orders" class="btn-primary">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span>Order Custom Fit</span>
+                </a>
+                <button class="btn-secondary view-product-btn">
+                  <i class="fas fa-eye"></i>
+                  <span>Quick View</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide Item 5 -->
+          <div class="slide-item">
+            <div class="slide-img-wrapper">
+              <img src="./assets/images/indowestern_gown.jpg" alt="Champagne Gold Indo-Western Cape Gown" class="slide-img">
+            </div>
+            <div class="slide-details">
+              <span class="slide-category">Modern Indo-Western Couture</span>
+              <h3 class="slide-title gold-gradient-text">Champagne Sequin Cape Gown</h3>
+              <p class="slide-description">
+                Show-stopping floor-length cape gown drenched in sparkling champagne gold sequin strands and geometric embellishments. Designed for fashion-forward divas.
+              </p>
+              <div class="slide-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Fabric</span>
+                  <span class="spec-val">Metallic Tulle & Shimmer Net</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Style</span>
+                  <span class="spec-val">Sheer Cape Silhouette</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Occasion</span>
+                  <span class="spec-val">Sangeet & Cocktail Gala</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Est. Delivery</span>
+                  <span class="spec-val">10 - 15 Days</span>
+                </div>
+              </div>
+              <div style="display: flex; gap: 1rem;">
+                <a href="#custom-orders" class="btn-primary">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span>Order Custom Fit</span>
+                </a>
+                <button class="btn-secondary view-product-btn">
+                  <i class="fas fa-eye"></i>
+                  <span>Quick View</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Custom Orders & File Upload Section -->
+  <section id="custom-orders" class="section-padding custom-order-section">
+    <div class="section-header">
+      <span class="section-subtitle">Custom Couture & Tailoring</span>
+      <h2 class="section-title gold-gradient-text">Upload Your Design & Requirements</h2>
+      <p class="section-desc">Have a specific design photo, Pinterest reference, or measurement sketch? Upload your files below to receive an instant customization consultation from Chameli master tailors.</p>
+    </div>
+
+    <div class="upload-card-wrapper gold-border-glow">
+      <div class="upload-grid">
+        
+        <div class="upload-info">
+          <h3 class="gold-gradient-text">Bespoke Stitching Service</h3>
+          <p>We craft custom outfits based on your reference images, fabric choices, and exact measurements. Attach your files to get started!</p>
+
+          <ul class="benefit-list">
+            <li class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-check"></i></div>
+              <span>Upload up to 5 reference photos or PDFs (max 15MB each)</span>
+            </li>
+            <li class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-check"></i></div>
+              <span>Choose your fabric, embroidery density & custom color dye</span>
+            </li>
+            <li class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-check"></i></div>
+              <span>Video call consultation & doorstep measurement options</span>
+            </li>
+            <li class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-check"></i></div>
+              <span>Direct WhatsApp connection with Chameli Head Designer</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="upload-form-side">
+          <!-- Dropzone Container -->
+          <div class="dropzone-container" id="dropzoneContainer">
+            <i class="fas fa-cloud-upload-alt dropzone-icon"></i>
+            <h4 class="dropzone-title">Drag & Drop Your Reference Files Here</h4>
+            <p class="dropzone-hint">or click to browse from device (JPG, PNG, PDF, WEBP)</p>
+            <input type="file" id="customFileInput" class="file-input-hidden" multiple accept="image/*,.pdf">
+          </div>
+
+          <!-- Uploaded files container -->
+          <div class="uploaded-files-preview" id="uploadedFilesPreview"></div>
+
+          <!-- Customer Form -->
+          <form id="customDesignForm" class="custom-form-group">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="custName" class="form-label">Full Name *</label>
+                <input type="text" id="custName" class="form-input" placeholder="e.g. Ananya Sharma" required>
+              </div>
+              <div class="form-field">
+                <label for="custPhone" class="form-label">Phone / WhatsApp *</label>
+                <input type="tel" id="custPhone" class="form-input" placeholder="+91 98765 43210" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="custOutfitType" class="form-label">Outfit Category</label>
+                <select id="custOutfitType" class="form-select">
+                  <option value="Bridal Lehenga">Bridal Lehenga</option>
+                  <option value="Designer Saree / Blouse">Designer Saree / Blouse</option>
+                  <option value="Anarkali Suit">Anarkali Suit</option>
+                  <option value="Indo-Western Gown">Indo-Western Gown</option>
+                  <option value="Festival Kurti / Palazzo">Festival Kurti / Palazzo</option>
+                  <option value="Other Custom Outfit">Other Custom Outfit</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="custFabric" class="form-label">Preferred Fabric</label>
+                <select id="custFabric" class="form-select">
+                  <option value="Pure Micro Velvet">Pure Micro Velvet</option>
+                  <option value="Silk Organza">Silk Organza</option>
+                  <option value="Raw Silk">Raw Silk</option>
+                  <option value="Net & Tulle">Net & Tulle</option>
+                  <option value="Georgette / Chiffon">Georgette / Chiffon</option>
+                  <option value="Boutique Recommendation">Boutique Recommendation</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="custNotes" class="form-label">Custom Requirements & Measurements Notes</label>
+              <textarea id="custNotes" class="form-textarea" rows="3" placeholder="Describe neck style, sleeve preference, target event date, or custom color requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 14px;">
+              <i class="fab fa-whatsapp" style="font-size: 1.1rem;"></i>
+              <span>Send Custom Inquiry to Boutique</span>
+            </button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Craftsmanship & Services -->
+  <section id="craftsmanship" class="section-padding">
+    <div class="section-header">
+      <span class="section-subtitle">Why Choose Chameli</span>
+      <h2 class="section-title gold-gradient-text">Exquisite Craftsmanship</h2>
+      <p class="section-desc">Every outfit crafted at Chameli Boutique reflects heritage Indian artistry combined with flawless modern fits.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <i class="fas fa-gem"></i>
+        </div>
+        <h3 class="feature-title">Hand Zardozi & Dabka</h3>
+        <p class="feature-desc">Authentic hand embroidery created by master karigars using gold threads, cutdana, mirror work, and real pearls.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <i class="fas fa-cut"></i>
+        </div>
+        <h3 class="feature-title">Bespoke Precision Fit</h3>
+        <p class="feature-desc">Multi-point measurement sculpting to ensure your bridal or party outfit drapes comfortably and fits perfectly.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <i class="fas fa-image"></i>
+        </div>
+        <h3 class="feature-title">Photo Reference Match</h3>
+        <p class="feature-desc">Upload any designer image or sketch and our designers will replicate or customize it according to your budget.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <i class="fas fa-shipping-fast"></i>
+        </div>
+        <h3 class="feature-title">Worldwide Express Delivery</h3>
+        <p class="feature-desc">Insured international and doorstep delivery with live tracking and alteration guarantee.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Theme Customizer Modal -->
+  <div class="modal-overlay" id="themeModal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="closeThemeBtn"><i class="fas fa-times"></i></button>
+      <h3 class="gold-gradient-text" style="font-size: 1.6rem; margin-bottom: 0.5rem;">Boutique Theme Customizer</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Select your preferred color palette for Chameli Boutique.</p>
+
+      <div class="theme-options-grid">
+        <div class="theme-card-option selected" data-theme-name="emerald">
+          <div class="theme-color-preview" style="background: linear-gradient(135deg, #0a110e, #e2b96c);"></div>
+          <span>Royal Emerald & Gold</span>
+        </div>
+        <div class="theme-card-option" data-theme-name="ruby">
+          <div class="theme-color-preview" style="background: linear-gradient(135deg, #12090b, #e8a598);"></div>
+          <span>Velvet Ruby & Rose</span>
+        </div>
+        <div class="theme-card-option" data-theme-name="midnight">
+          <div class="theme-color-preview" style="background: linear-gradient(135deg, #070913, #c5a059);"></div>
+          <span>Midnight Silk & Gold</span>
+        </div>
+        <div class="theme-card-option" data-theme-name="champagne">
+          <div class="theme-color-preview" style="background: linear-gradient(135deg, #171512, #d4af37);"></div>
+          <span>Champagne Silk & Bronze</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Product Modal -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-content" style="max-width: 750px;">
+      <button class="modal-close-btn" id="closeQuickViewBtn"><i class="fas fa-times"></i></button>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+        <img src="" id="modalProductImg" alt="Product Image" style="width: 100%; height: 340px; object-fit: cover; border-radius: var(--radius-md); border: 1px solid var(--border-gold);">
+        <div>
+          <span id="modalProductCategory" class="card-category">Category</span>
+          <h3 id="modalProductTitle" class="gold-gradient-text" style="font-size: 1.6rem; margin: 0.5rem 0 1rem;">Outfit Name</h3>
+          <p id="modalProductPrice" class="card-price" style="font-size: 1.3rem; margin-bottom: 1rem;">Price</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+            Customizable according to your size, fabric preference, and color choice. Handcrafted by Chameli master artisans.
+          </p>
+          <a href="#custom-orders" class="btn-primary" onclick="document.getElementById('quickViewModal').classList.remove('active');">
+            <i class="fas fa-pencil-ruler"></i>
+            <span>Request Custom Fit</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-wrapper" style="margin-bottom: 1rem;">
+          <img src="./assets/images/chameli_logo.jpg" alt="Chameli Boutique Logo" class="logo-img" style="border-radius: 8px; object-fit: contain; background: #000; padding: 2px;">
+          <div class="logo-text">
+            <span class="logo-title gold-gradient-text">CHAMELI</span>
+            <span class="logo-subtitle">DESIGNER BOUTIQUE • Kizhakkambalam</span>
+          </div>
+        </div>
+        <p>Your premier destination for bespoke bridal lehengas, hand-loomed organza sarees, royal heritage anarkalis, and custom couture tailoring in Kizhakkambalam.</p>
+        <div class="social-links">
+          <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-btn" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#collections">New Collections</a></li>
+          <li><a href="#custom-orders">Upload Custom Design</a></li>
+          <li><a href="admin-upload.html">Upload to Assets Studio</a></li>
+          <li><a href="#craftsmanship">Our Craftsmanship</a></li>
+          <li><a href="#custom-orders">Book Consultation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Collections</h4>
+        <ul class="footer-links">
+          <li><a href="#collections">Bridal Lehengas 2026</a></li>
+          <li><a href="#collections">Silk Organza Sarees</a></li>
+          <li><a href="#collections">Royal Velvet Anarkalis</a></li>
+          <li><a href="#collections">Indo-Western Gowns</a></li>
+          <li><a href="#collections">Custom Dupattas & Blouses</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Boutique Address</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.8rem;">
+          <i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-right: 8px;"></i>
+          Chameli Designer Boutique,<br>Kizhakkambalam,<br>Ernakulam, Kerala
+        </p>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.8rem;">
+          <i class="fas fa-phone-alt" style="color: var(--accent-gold); margin-right: 8px;"></i>
+          +91 98765 43210 / +91 98765 43211
+        </p>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          <i class="fas fa-envelope" style="color: var(--accent-gold); margin-right: 8px;"></i>
+          contact@chameliboutique.com
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Chameli Designer Boutique (Kizhakkambalam). All Rights Reserved.</span>
+      <span>Crafted with Elegance & Tradition</span>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "chameli-designer-boutique",
+  "version": "1.0.0",
+  "description": "Chameli Designer Boutique Kizhakkambalam - Official Web Application & Asset Studio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "boutique",
+    "bridal",
+    "sarees",
+    "lehengas",
+    "custom-couture"
+  ],
+  "author": "Chameli Designer Boutique",
+  "license": "ISC"
+}

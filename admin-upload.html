@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Assets Upload & Manager | Chameli Designer Boutique</title>
+  <meta name="description" content="Asset Uploader and Image Collection Manager for Chameli Designer Boutique Kizhakkambalam. Add new outfit designs, sarees, lehengas, hero banners, and brand logos to assets/images/.">
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo-wrapper">
+        <img src="./assets/images/chameli_logo.jpg" alt="Chameli Designer Boutique Logo" class="logo-img" id="navLogoImg" style="border-radius: 8px; object-fit: contain; background: #000; padding: 2px;">
+        <div class="logo-text">
+          <span class="logo-title gold-gradient-text">CHAMELI</span>
+          <span class="logo-subtitle">Asset Studio • Kizhakkambalam</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link"><i class="fas fa-arrow-left" style="margin-right: 6px;"></i> Main Boutique Site</a></li>
+          <li><a href="#uploader" class="nav-link active">Upload New Asset</a></li>
+          <li><a href="#manager" class="nav-link">Manage Assets Gallery</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-switcher-btn" id="openThemeBtn">
+          <i class="fas fa-palette"></i>
+          <span>Theme & Logo</span>
+        </button>
+        <a href="index.html" class="btn-primary">
+          <i class="fas fa-store"></i>
+          <span>View Live Boutique</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Admin Main Container -->
+  <main class="admin-container">
+
+    <!-- Admin Header Card -->
+    <div class="admin-header-card gold-border-glow">
+      <div>
+        <span class="section-subtitle">Local Asset Manager</span>
+        <h1 class="gold-gradient-text" style="font-size: 2.2rem; margin-top: 4px;">Upload Assets to assets/images/</h1>
+        <p style="color: var(--text-muted); margin-top: 6px; font-size: 0.95rem;">
+          Add new outfit photography, sarees, lehengas, or logos directly to your website. Uploaded images are published instantly to <code style="color: var(--accent-gold);">assets/images/</code>!
+        </p>
+      </div>
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <div style="background: rgba(226, 185, 108, 0.12); padding: 12px 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); text-align: center;">
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Custom Assets</span>
+          <div id="customAssetsCount" style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--accent-gold); font-weight: 700;">0 Loaded</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dedicated Logo Manager Card -->
+    <section id="logo-manager" class="upload-card-wrapper gold-border-glow" style="max-width: 100%; margin-bottom: 2rem; padding: 2rem; background: var(--bg-card);">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+        <div>
+          <span class="section-subtitle">Brand Identity Manager</span>
+          <h3 class="gold-gradient-text" style="font-size: 1.6rem; margin-top: 4px;">
+            <i class="fas fa-crown" style="margin-right: 8px; color: var(--accent-gold);"></i> Upload Official Shop Logo
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">
+            Upload your official logo image (PNG/JPG). It will update live across the header, footer, and branding bars!
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+          <input type="file" id="logoUploadInput" accept="image/*" style="display: none;">
+          <label for="logoUploadInput" class="btn-primary" style="cursor: pointer; padding: 12px 20px;">
+            <i class="fas fa-camera"></i>
+            <span>Upload Custom Logo File</span>
+          </label>
+          <button class="btn-secondary" id="resetLogoBtn" style="padding: 12px 20px;">
+            <i class="fas fa-undo"></i>
+            <span>Reset to Default Logo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="uploader" class="upload-card-wrapper gold-border-glow" style="max-width: 100%; margin-bottom: 3rem; padding: 2.5rem;">
+      <h2 class="gold-gradient-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;">
+        <i class="fas fa-folder-plus" style="margin-right: 10px; color: var(--accent-gold);"></i> Upload New Outfit / Asset File
+      </h2>
+
+      <div class="admin-upload-grid">
+        
+        <!-- Left: Image Drag & Drop / File Input -->
+        <div>
+          <div class="asset-dropzone" id="adminAssetDropzone">
+            <i class="fas fa-images dropzone-icon"></i>
+            <h4 class="dropzone-title">Select or Drag Multiple Outfit Image Files</h4>
+            <p class="dropzone-hint">Select multiple images at once (JPG, PNG, WEBP, SVG)</p>
+            <input type="file" id="adminAssetFileInput" class="file-input-hidden" accept="image/*" multiple>
+          </div>
+          <img id="adminAssetPreview" class="asset-preview-box" alt="Uploaded Asset Preview">
+          <div id="batchPreviewGrid" class="batch-preview-grid" style="display: none;"></div>
+          <div id="downloadHelperContainer" style="display: none; margin-top: 1rem;">
+            <a id="downloadAssetFileBtn" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.8rem;" download="custom_asset.jpg">
+              <i class="fas fa-download"></i> Save/Download Image to assets/images/
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Asset Details Form -->
+        <form id="adminAssetForm" class="custom-form-group" style="margin-top: 0;">
+          <div class="form-field">
+            <label for="assetTitle" class="form-label">Outfit / Asset Title *</label>
+            <input type="text" id="assetTitle" class="form-input" placeholder="e.g. Royal Maroon Silk Kanjivaram Saree" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="assetCategory" class="form-label">Category</label>
+              <select id="assetCategory" class="form-select">
+                <option value="bridal">Bridal Lehenga</option>
+                <option value="sarees">Designer Saree</option>
+                <option value="anarkali">Royal Anarkali</option>
+                <option value="indowestern">Indo-Western Gown</option>
+                <option value="hero">Hero Showcase Banner</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="assetBadge" class="form-label">Card Badge Tag *</label>
+              <select id="assetBadge" class="form-select">
+                <option value="Bridal 2026">Bridal 2026</option>
+                <option value="Bestseller">Bestseller</option>
+                <option value="New Arrival" selected>New Arrival</option>
+                <option value="Festive Special">Festive Special</option>
+                <option value="Pastel Edition">Pastel Edition</option>
+                <option value="Runway Look">Runway Look</option>
+                <option value="Custom Couture">Custom Couture</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="assetPrice" class="form-label">Display Price Tag</label>
+              <input type="text" id="assetPrice" class="form-input" placeholder="e.g. ₹35,000 or Custom Couture">
+            </div>
+            <div class="form-field">
+              <label for="assetFabric" class="form-label">Fabric / Spec</label>
+              <input type="text" id="assetFabric" class="form-input" placeholder="e.g. Pure Georgette Zardozi">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="assetTarget" class="form-label">Showcase Destination</label>
+            <select id="assetTarget" class="form-select">
+              <option value="both" selected>Add to Grid & Slide Views (Default)</option>
+              <option value="grid">Add to Grid View Only</option>
+              <option value="hero">Set as Hero Showcase Background</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="assetDescription" class="form-label">Description / Handwork Details</label>
+            <textarea id="assetDescription" class="form-textarea" rows="2" placeholder="Brief craftsmanship notes, embroidery type, or custom option description..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="padding: 14px; width: 100%; justify-content: center;">
+            <i class="fas fa-plus-circle"></i>
+            <span>Upload & Publish Asset to Website</span>
+          </button>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- Asset Manager Grid Section -->
+    <section id="manager">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
+        <span class="section-subtitle">Collection Library (assets/images/)</span>
+        <h2 class="section-title gold-gradient-text" style="font-size: 2rem;">Manage Active Website Assets</h2>
+        <p class="section-desc">View, inspect, or delete custom outfit images uploaded to Chameli Boutique.</p>
+      </div>
+
+      <div class="assets-manager-grid" id="assetsManagerGrid">
+        <!-- Dynamically rendered custom & default assets -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Theme & Logo Customizer Modal -->
+  <div class="modal-overlay" id="themeModal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="closeThemeBtn"><i class="fas fa-times"></i></button>
+      <h3 class="gold-gradient-text" style="font-size: 1.6rem; margin-bottom: 0.5rem;">Boutique Theme & Logo Customizer</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Easily test different color palettes or upload a custom brand logo!</p>
+
+      <h4 style="font-family: var(--font-heading); font-size: 1rem; color: var(--accent-gold);">1. Select Website Theme Palette:</h4>
+      <div class="theme-options-grid">
+        <div class="theme-card-option selected" data-theme-name="emerald">
+          <div class="theme-color-preview" style="background: linear-gradient(135deg, #0a110e, #e2b96c);"></div>
+          <span>Royal Emerald & Gold</span>
+        </div>
+        <div class="theme-card-option" data-theme-name="ruby">
+          <div class="theme-color-preview" style="background: linear-gradient(135deg, #12090b, #e8a598);"></div>
+          <span>Velvet Ruby & Rose</span>
+        </div>
+        <div class="theme-card-option" data-theme-name="midnight">
+          <div class="theme-color-preview" style="background: linear-gradient(135deg, #070913, #c5a059);"></div>
+          <span>Midnight Silk & Gold</span>
+        </div>
+        <div class="theme-card-option" data-theme-name="champagne">
+          <div class="theme-color-preview" style="background: linear-gradient(135deg, #171512, #d4af37);"></div>
+          <span>Champagne Silk & Bronze</span>
+        </div>
+      </div>
+
+      <h4 style="font-family: var(--font-heading); font-size: 1rem; color: var(--accent-gold); margin-top: 1.5rem;">2. Upload Official Shop Logo:</h4>
+      <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 0.8rem;">Upload your logo image (PNG/JPG). It will update live across header and footer!</p>
+      
+      <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
+        <label for="logoUploadInput" class="btn-primary" style="cursor: pointer;">
+          <i class="fas fa-camera"></i>
+          <span>Upload Custom Logo File</span>
+        </label>
+        <button class="btn-secondary" id="modalResetLogoBtn">Reset to Default Logo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" style="margin-top: 4rem;">
+    <div class="footer-bottom" style="border: none; padding-top: 0;">
+      <span>&copy; 2026 Chameli Designer Boutique (Kizhakkambalam) - Asset Management Studio</span>
+      <a href="index.html" style="color: var(--accent-gold); text-decoration: none;">Return to Storefront</a>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

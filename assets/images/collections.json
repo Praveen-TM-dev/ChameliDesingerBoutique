@@ -1,0 +1,28 @@
+﻿[
+    {
+        "id":  "asset_1790933862952",
+        "title":  "White Kurti",
+        "category":  "anarkali",
+        "categoryName":  "Royal Anarkali",
+        "badge":  "New Arrival",
+        "price":  "RS.1200",
+        "fabric":  "Pure Cotton",
+        "target":  "grid",
+        "description":  "",
+        "imgSrc":  "./assets/images/20261002_150742_Pic22.jpeg",
+        "fileName":  "20261002_150742_Pic22.jpeg",
+        "timestamp":  "2026-10-02 15:07"
+    },
+    {
+        "id":  "asset_1790537163697",
+        "title":  "Green Kurti",
+        "category":  "anarkali",
+        "categoryName":  "Royal Anarkali",
+        "price":  "Rs 850",
+        "fabric":  "Cotton",
+        "description":  "Test",
+        "imgSrc":  "./assets/images/20260928_005603_GreenKurti.jpeg",
+        "fileName":  "20260928_005603_GreenKurti.jpeg",
+        "timestamp":  "2026-09-28 00:56"
+    }
+]
