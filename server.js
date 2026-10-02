@@ -44,7 +44,7 @@ function sendJson(res, data, statusCode = 200) {
   res.end(JSON.stringify(data));
 }
 
-const server = http.createServer((req, res) => {
+const requestHandler = (req, res) => {
   // CORS Headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -75,7 +75,8 @@ const server = http.createServer((req, res) => {
       const resultList = files
         .filter(f => f !== 'collections.json' && validExtensions.includes(path.extname(f).toLowerCase()))
         .map(fileName => {
-          const stats = fs.statSync(path.join(IMAGES_DIR, fileName));
+          let stats = { size: 0 };
+          try { stats = fs.statSync(path.join(IMAGES_DIR, fileName)); } catch (e) {}
           const meta = metaDict[fileName] || null;
           return {
             id: meta?.id || 'file_' + fileName.replace(/[^a-zA-Z0-9]/g, '_'),
@@ -210,12 +211,18 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': contentType });
     fs.createReadStream(filePath).pipe(res);
   });
-});
+};
 
-server.listen(PORT, () => {
-  console.log(`==========================================================`);
-  console.log(` Chameli Boutique Node.js Server active on http://localhost:${PORT}`);
-  console.log(` Root Directory: ${ROOT_DIR}`);
-  console.log(` Assets images directory: ${IMAGES_DIR}`);
-  console.log(`==========================================================`);
-});
+const server = http.createServer(requestHandler);
+
+if (require.main === module) {
+  server.listen(PORT, () => {
+    console.log(`==========================================================`);
+    console.log(` Chameli Boutique Node.js Server active on http://localhost:${PORT}`);
+    console.log(` Root Directory: ${ROOT_DIR}`);
+    console.log(` Assets images directory: ${IMAGES_DIR}`);
+    console.log(`==========================================================`);
+  });
+}
+
+module.exports = requestHandler;
